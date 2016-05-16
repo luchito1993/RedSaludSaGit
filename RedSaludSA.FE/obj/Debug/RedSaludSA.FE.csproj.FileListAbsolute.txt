@@ -1,0 +1,12 @@
+C:\RedSaludSA\RedSaludSA.FE\bin\RedSaludSA.FE.dll.config
+C:\RedSaludSA\RedSaludSA.FE\bin\RedSaludSA.FE.dll
+C:\RedSaludSA\RedSaludSA.FE\bin\RedSaludSA.FE.pdb
+C:\RedSaludSA\RedSaludSA.FE\bin\RedSaludSA.BL.dll
+C:\RedSaludSA\RedSaludSA.FE\bin\RedSaludSA.DAL.dll
+C:\RedSaludSA\RedSaludSA.FE\bin\RedSaludSA.MD.dll
+C:\RedSaludSA\RedSaludSA.FE\bin\RedSaludSA.BL.pdb
+C:\RedSaludSA\RedSaludSA.FE\bin\RedSaludSA.DAL.pdb
+C:\RedSaludSA\RedSaludSA.FE\bin\RedSaludSA.MD.pdb
+C:\RedSaludSA\RedSaludSA.FE\obj\Debug\RedSaludSA.FE.csprojResolveAssemblyReference.cache
+C:\RedSaludSA\RedSaludSA.FE\obj\Debug\RedSaludSA.FE.dll
+C:\RedSaludSA\RedSaludSA.FE\obj\Debug\RedSaludSA.FE.pdb

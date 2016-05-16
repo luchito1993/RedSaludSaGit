@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbRedSaludsaModelStoreContainer" CdmEntityContainer="DbRedSaludsaEntities">
+    <EntitySetMapping Name="RSA_Prestador">
+      <EntityTypeMapping TypeName="DbRedSaludsaModel.RSA_Prestador">
+        <MappingFragment StoreEntitySet="RSA_Prestador">
+          <ScalarProperty Name="pre_usuarioModificacion" ColumnName="pre_usuarioModificacion" />
+          <ScalarProperty Name="pre_fechaModificacion" ColumnName="pre_fechaModificacion" />
+          <ScalarProperty Name="pre_usuarioIngreso" ColumnName="pre_usuarioIngreso" />
+          <ScalarProperty Name="pre_fechaIngreso" ColumnName="pre_fechaIngreso" />
+          <ScalarProperty Name="pre_numeroConvenio" ColumnName="pre_numeroConvenio" />
+          <ScalarProperty Name="pre_numeroPersona" ColumnName="pre_numeroPersona" />
+          <ScalarProperty Name="pre_ruc" ColumnName="pre_ruc" />
+          <ScalarProperty Name="usu_id" ColumnName="usu_id" />
+          <ScalarProperty Name="pre_nivelHasta" ColumnName="pre_nivelHasta" />
+          <ScalarProperty Name="pre_nivelDesde" ColumnName="pre_nivelDesde" />
+          <ScalarProperty Name="pre_apellidos" ColumnName="pre_apellidos" />
+          <ScalarProperty Name="pre_nombres" ColumnName="pre_nombres" />
+          <ScalarProperty Name="pre_id" ColumnName="pre_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RSA_Usuario">
+      <EntityTypeMapping TypeName="DbRedSaludsaModel.RSA_Usuario">
+        <MappingFragment StoreEntitySet="RSA_Usuario">
+          <ScalarProperty Name="usu_usuarioModificacion" ColumnName="usu_usuarioModificacion" />
+          <ScalarProperty Name="usu_fechaModificacion" ColumnName="usu_fechaModificacion" />
+          <ScalarProperty Name="usu_usuarioIngreso" ColumnName="usu_usuarioIngreso" />
+          <ScalarProperty Name="usu_fechaIngreso" ColumnName="usu_fechaIngreso" />
+          <ScalarProperty Name="usu_estado" ColumnName="usu_estado" />
+          <ScalarProperty Name="usu_contrasena" ColumnName="usu_contrasena" />
+          <ScalarProperty Name="usu_nombre" ColumnName="usu_nombre" />
+          <ScalarProperty Name="usu_id" ColumnName="usu_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

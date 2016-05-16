@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://www.saludventasonline.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://www.saludventasonline.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://www.saludventasonline.com/">
+      <s:element name="devolverContratosPorCedula">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inputCedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="devolverContratosPorCedulaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="devolverContratosPorCedulaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Autenticacion" type="tns:Autenticacion" />
+      <s:complexType name="Autenticacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="devolverContratosPorNumeroContrato">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="inputNumeroContrato" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="devolverContratosPorNumeroContratoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="devolverContratosPorNumeroContratoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="devolverContratosPorContratoNpersona">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Npersona" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Ncontrato" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="devolverContratosPorContratoNpersonaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="devolverContratosPorContratoNpersonaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="devolverContratosPorNombreApellido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apellido" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="devolverContratosPorNombreApellidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="devolverContratosPorNombreApellidoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="devolverContratosPorCedulaSoapIn">
+    <wsdl:part name="parameters" element="tns:devolverContratosPorCedula" />
+  </wsdl:message>
+  <wsdl:message name="devolverContratosPorCedulaSoapOut">
+    <wsdl:part name="parameters" element="tns:devolverContratosPorCedulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="devolverContratosPorCedulaAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="devolverContratosPorNumeroContratoSoapIn">
+    <wsdl:part name="parameters" element="tns:devolverContratosPorNumeroContrato" />
+  </wsdl:message>
+  <wsdl:message name="devolverContratosPorNumeroContratoSoapOut">
+    <wsdl:part name="parameters" element="tns:devolverContratosPorNumeroContratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="devolverContratosPorNumeroContratoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="devolverContratosPorContratoNpersonaSoapIn">
+    <wsdl:part name="parameters" element="tns:devolverContratosPorContratoNpersona" />
+  </wsdl:message>
+  <wsdl:message name="devolverContratosPorContratoNpersonaSoapOut">
+    <wsdl:part name="parameters" element="tns:devolverContratosPorContratoNpersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="devolverContratosPorContratoNpersonaAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="devolverContratosPorNombreApellidoSoapIn">
+    <wsdl:part name="parameters" element="tns:devolverContratosPorNombreApellido" />
+  </wsdl:message>
+  <wsdl:message name="devolverContratosPorNombreApellidoSoapOut">
+    <wsdl:part name="parameters" element="tns:devolverContratosPorNombreApellidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="devolverContratosPorNombreApellidoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:portType name="WSconsultasSoap">
+    <wsdl:operation name="devolverContratosPorCedula">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve titular y beneficiarios según el número de cédula</wsdl:documentation>
+      <wsdl:input message="tns:devolverContratosPorCedulaSoapIn" />
+      <wsdl:output message="tns:devolverContratosPorCedulaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="devolverContratosPorNumeroContrato">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve titular y beneficiarios según el número de contrato</wsdl:documentation>
+      <wsdl:input message="tns:devolverContratosPorNumeroContratoSoapIn" />
+      <wsdl:output message="tns:devolverContratosPorNumeroContratoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="devolverContratosPorContratoNpersona">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve titular y beneficiarios según el número de persona y número de contrato</wsdl:documentation>
+      <wsdl:input message="tns:devolverContratosPorContratoNpersonaSoapIn" />
+      <wsdl:output message="tns:devolverContratosPorContratoNpersonaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="devolverContratosPorNombreApellido">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve titular y beneficiarios según el número de persona y número de contrato</wsdl:documentation>
+      <wsdl:input message="tns:devolverContratosPorNombreApellidoSoapIn" />
+      <wsdl:output message="tns:devolverContratosPorNombreApellidoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSconsultasSoap" type="tns:WSconsultasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="devolverContratosPorCedula">
+      <soap:operation soapAction="https://www.saludventasonline.com/devolverContratosPorCedula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:devolverContratosPorCedulaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devolverContratosPorNumeroContrato">
+      <soap:operation soapAction="https://www.saludventasonline.com/devolverContratosPorNumeroContrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:devolverContratosPorNumeroContratoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devolverContratosPorContratoNpersona">
+      <soap:operation soapAction="https://www.saludventasonline.com/devolverContratosPorContratoNpersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:devolverContratosPorContratoNpersonaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devolverContratosPorNombreApellido">
+      <soap:operation soapAction="https://www.saludventasonline.com/devolverContratosPorNombreApellido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:devolverContratosPorNombreApellidoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSconsultasSoap12" type="tns:WSconsultasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="devolverContratosPorCedula">
+      <soap12:operation soapAction="https://www.saludventasonline.com/devolverContratosPorCedula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:devolverContratosPorCedulaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devolverContratosPorNumeroContrato">
+      <soap12:operation soapAction="https://www.saludventasonline.com/devolverContratosPorNumeroContrato" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:devolverContratosPorNumeroContratoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devolverContratosPorContratoNpersona">
+      <soap12:operation soapAction="https://www.saludventasonline.com/devolverContratosPorContratoNpersona" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:devolverContratosPorContratoNpersonaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devolverContratosPorNombreApellido">
+      <soap12:operation soapAction="https://www.saludventasonline.com/devolverContratosPorNombreApellido" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:devolverContratosPorNombreApellidoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSconsultas">
+    <wsdl:port name="WSconsultasSoap" binding="tns:WSconsultasSoap">
+      <soap:address location="http://190.216.203.182/WebServiceRedSaludsa/WSconsultas.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSconsultasSoap12" binding="tns:WSconsultasSoap12">
+      <soap12:address location="http://190.216.203.182/WebServiceRedSaludsa/WSconsultas.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

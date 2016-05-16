@@ -1,0 +1,6 @@
+C:\RedSaludSA\RedSaludSA.MD\bin\Debug\RedSaludSA.MD.dll.config
+C:\RedSaludSA\RedSaludSA.MD\bin\Debug\RedSaludSA.MD.dll
+C:\RedSaludSA\RedSaludSA.MD\bin\Debug\RedSaludSA.MD.pdb
+C:\RedSaludSA\RedSaludSA.MD\obj\Debug\RedSaludSA.MD.dll
+C:\RedSaludSA\RedSaludSA.MD\obj\Debug\RedSaludSA.MD.pdb
+C:\RedSaludSA\RedSaludSA.MD\obj\Debug\RedSaludSA.MD.csprojResolveAssemblyReference.cache

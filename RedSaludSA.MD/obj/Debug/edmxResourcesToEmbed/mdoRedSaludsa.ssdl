@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbRedSaludsaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="DbRedSaludsaModelStoreContainer">
+    <EntitySet Name="RSA_Prestador" EntityType="DbRedSaludsaModel.Store.RSA_Prestador" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RSA_Usuario" EntityType="DbRedSaludsaModel.Store.RSA_Usuario" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_RSA_Prestador_RSA_Usuario" Association="DbRedSaludsaModel.Store.FK_RSA_Prestador_RSA_Usuario">
+      <End Role="RSA_Usuario" EntitySet="RSA_Usuario" />
+      <End Role="RSA_Prestador" EntitySet="RSA_Prestador" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="RSA_Prestador">
+    <Key>
+      <PropertyRef Name="pre_id" />
+    </Key>
+    <Property Name="pre_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="pre_nombres" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="pre_apellidos" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="pre_nivelDesde" Type="int" Nullable="false" />
+    <Property Name="pre_nivelHasta" Type="int" Nullable="false" />
+    <Property Name="usu_id" Type="int" Nullable="false" />
+    <Property Name="pre_ruc" Type="varchar" MaxLength="13" />
+    <Property Name="pre_numeroPersona" Type="decimal" Precision="10" />
+    <Property Name="pre_numeroConvenio" Type="int" Nullable="false" />
+    <Property Name="pre_fechaIngreso" Type="datetime" Nullable="false" />
+    <Property Name="pre_usuarioIngreso" Type="int" Nullable="false" />
+    <Property Name="pre_fechaModificacion" Type="datetime" />
+    <Property Name="pre_usuarioModificacion" Type="int" />
+  </EntityType>
+  <EntityType Name="RSA_Usuario">
+    <Key>
+      <PropertyRef Name="usu_id" />
+    </Key>
+    <Property Name="usu_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="usu_nombre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="usu_contrasena" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="usu_estado" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="usu_fechaIngreso" Type="datetime" Nullable="false" />
+    <Property Name="usu_usuarioIngreso" Type="int" Nullable="false" />
+    <Property Name="usu_fechaModificacion" Type="datetime" />
+    <Property Name="usu_usuarioModificacion" Type="int" />
+  </EntityType>
+  <Association Name="FK_RSA_Prestador_RSA_Usuario">
+    <End Role="RSA_Usuario" Type="DbRedSaludsaModel.Store.RSA_Usuario" Multiplicity="1" />
+    <End Role="RSA_Prestador" Type="DbRedSaludsaModel.Store.RSA_Prestador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RSA_Usuario">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="RSA_Prestador">
+        <PropertyRef Name="usu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

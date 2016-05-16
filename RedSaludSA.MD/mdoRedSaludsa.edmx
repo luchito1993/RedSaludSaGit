@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DbRedSaludsaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DbRedSaludsaModelStoreContainer">
+          <EntitySet Name="RSA_Prestador" EntityType="DbRedSaludsaModel.Store.RSA_Prestador" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RSA_Usuario" EntityType="DbRedSaludsaModel.Store.RSA_Usuario" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_RSA_Prestador_RSA_Usuario" Association="DbRedSaludsaModel.Store.FK_RSA_Prestador_RSA_Usuario">
+            <End Role="RSA_Usuario" EntitySet="RSA_Usuario" />
+            <End Role="RSA_Prestador" EntitySet="RSA_Prestador" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="RSA_Prestador">
+          <Key>
+            <PropertyRef Name="pre_id" />
+          </Key>
+          <Property Name="pre_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="pre_nombres" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="pre_apellidos" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="pre_nivelDesde" Type="int" Nullable="false" />
+          <Property Name="pre_nivelHasta" Type="int" Nullable="false" />
+          <Property Name="usu_id" Type="int" Nullable="false" />
+          <Property Name="pre_ruc" Type="varchar" MaxLength="13" />
+          <Property Name="pre_numeroPersona" Type="decimal" Precision="10" />
+          <Property Name="pre_numeroConvenio" Type="int" Nullable="false" />
+          <Property Name="pre_fechaIngreso" Type="datetime" Nullable="false" />
+          <Property Name="pre_usuarioIngreso" Type="int" Nullable="false" />
+          <Property Name="pre_fechaModificacion" Type="datetime" />
+          <Property Name="pre_usuarioModificacion" Type="int" />
+        </EntityType>
+        <EntityType Name="RSA_Usuario">
+          <Key>
+            <PropertyRef Name="usu_id" />
+          </Key>
+          <Property Name="usu_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="usu_nombre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="usu_contrasena" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="usu_estado" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="usu_fechaIngreso" Type="datetime" Nullable="false" />
+          <Property Name="usu_usuarioIngreso" Type="int" Nullable="false" />
+          <Property Name="usu_fechaModificacion" Type="datetime" />
+          <Property Name="usu_usuarioModificacion" Type="int" />
+        </EntityType>
+        <Association Name="FK_RSA_Prestador_RSA_Usuario">
+          <End Role="RSA_Usuario" Type="DbRedSaludsaModel.Store.RSA_Usuario" Multiplicity="1" />
+          <End Role="RSA_Prestador" Type="DbRedSaludsaModel.Store.RSA_Prestador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RSA_Usuario">
+              <PropertyRef Name="usu_id" />
+            </Principal>
+            <Dependent Role="RSA_Prestador">
+              <PropertyRef Name="usu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbRedSaludsaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="DbRedSaludsaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RSA_Prestador" EntityType="DbRedSaludsaModel.RSA_Prestador" />
+          <EntitySet Name="RSA_Usuario" EntityType="DbRedSaludsaModel.RSA_Usuario" />
+          <AssociationSet Name="FK_RSA_Prestador_RSA_Usuario" Association="DbRedSaludsaModel.FK_RSA_Prestador_RSA_Usuario">
+            <End Role="RSA_Usuario" EntitySet="RSA_Usuario" />
+            <End Role="RSA_Prestador" EntitySet="RSA_Prestador" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="RSA_Prestador">
+          <Key>
+            <PropertyRef Name="pre_id" />
+          </Key>
+          <Property Type="Int32" Name="pre_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="pre_nombres" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pre_apellidos" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="pre_nivelDesde" Nullable="false" />
+          <Property Type="Int32" Name="pre_nivelHasta" Nullable="false" />
+          <Property Type="Int32" Name="usu_id" Nullable="false" />
+          <Property Type="String" Name="pre_ruc" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="pre_numeroPersona" Precision="10" Scale="0" />
+          <Property Type="Int32" Name="pre_numeroConvenio" Nullable="false" />
+          <Property Type="DateTime" Name="pre_fechaIngreso" Nullable="false" />
+          <Property Type="Int32" Name="pre_usuarioIngreso" Nullable="false" />
+          <Property Type="DateTime" Name="pre_fechaModificacion" />
+          <Property Type="Int32" Name="pre_usuarioModificacion" />
+          <NavigationProperty Name="RSA_Usuario" Relationship="DbRedSaludsaModel.FK_RSA_Prestador_RSA_Usuario" FromRole="RSA_Prestador" ToRole="RSA_Usuario" />
+        </EntityType>
+        <EntityType Name="RSA_Usuario">
+          <Key>
+            <PropertyRef Name="usu_id" />
+          </Key>
+          <Property Type="Int32" Name="usu_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="usu_nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="usu_contrasena" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="usu_estado" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="usu_fechaIngreso" Nullable="false" />
+          <Property Type="Int32" Name="usu_usuarioIngreso" Nullable="false" />
+          <Property Type="DateTime" Name="usu_fechaModificacion" />
+          <Property Type="Int32" Name="usu_usuarioModificacion" />
+          <NavigationProperty Name="RSA_Prestador" Relationship="DbRedSaludsaModel.FK_RSA_Prestador_RSA_Usuario" FromRole="RSA_Usuario" ToRole="RSA_Prestador" />
+        </EntityType>
+        <Association Name="FK_RSA_Prestador_RSA_Usuario">
+          <End Type="DbRedSaludsaModel.RSA_Usuario" Role="RSA_Usuario" Multiplicity="1" />
+          <End Type="DbRedSaludsaModel.RSA_Prestador" Role="RSA_Prestador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RSA_Usuario">
+              <PropertyRef Name="usu_id" />
+            </Principal>
+            <Dependent Role="RSA_Prestador">
+              <PropertyRef Name="usu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbRedSaludsaModelStoreContainer" CdmEntityContainer="DbRedSaludsaEntities">
+          <EntitySetMapping Name="RSA_Prestador">
+            <EntityTypeMapping TypeName="DbRedSaludsaModel.RSA_Prestador">
+              <MappingFragment StoreEntitySet="RSA_Prestador">
+                <ScalarProperty Name="pre_usuarioModificacion" ColumnName="pre_usuarioModificacion" />
+                <ScalarProperty Name="pre_fechaModificacion" ColumnName="pre_fechaModificacion" />
+                <ScalarProperty Name="pre_usuarioIngreso" ColumnName="pre_usuarioIngreso" />
+                <ScalarProperty Name="pre_fechaIngreso" ColumnName="pre_fechaIngreso" />
+                <ScalarProperty Name="pre_numeroConvenio" ColumnName="pre_numeroConvenio" />
+                <ScalarProperty Name="pre_numeroPersona" ColumnName="pre_numeroPersona" />
+                <ScalarProperty Name="pre_ruc" ColumnName="pre_ruc" />
+                <ScalarProperty Name="usu_id" ColumnName="usu_id" />
+                <ScalarProperty Name="pre_nivelHasta" ColumnName="pre_nivelHasta" />
+                <ScalarProperty Name="pre_nivelDesde" ColumnName="pre_nivelDesde" />
+                <ScalarProperty Name="pre_apellidos" ColumnName="pre_apellidos" />
+                <ScalarProperty Name="pre_nombres" ColumnName="pre_nombres" />
+                <ScalarProperty Name="pre_id" ColumnName="pre_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RSA_Usuario">
+            <EntityTypeMapping TypeName="DbRedSaludsaModel.RSA_Usuario">
+              <MappingFragment StoreEntitySet="RSA_Usuario">
+                <ScalarProperty Name="usu_usuarioModificacion" ColumnName="usu_usuarioModificacion" />
+                <ScalarProperty Name="usu_fechaModificacion" ColumnName="usu_fechaModificacion" />
+                <ScalarProperty Name="usu_usuarioIngreso" ColumnName="usu_usuarioIngreso" />
+                <ScalarProperty Name="usu_fechaIngreso" ColumnName="usu_fechaIngreso" />
+                <ScalarProperty Name="usu_estado" ColumnName="usu_estado" />
+                <ScalarProperty Name="usu_contrasena" ColumnName="usu_contrasena" />
+                <ScalarProperty Name="usu_nombre" ColumnName="usu_nombre" />
+                <ScalarProperty Name="usu_id" ColumnName="usu_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="mdoRedSaludsa">
+        <EntityTypeShape EntityType="DbRedSaludsaModel.RSA_Prestador" Width="1.5" PointX="3" PointY="1" Height="3.7109993489583317" />
+        <EntityTypeShape EntityType="DbRedSaludsaModel.RSA_Usuario" Width="1.5" PointX="0.75" PointY="1.5" Height="2.7494921874999991" />
+        <AssociationConnector Association="DbRedSaludsaModel.FK_RSA_Prestador_RSA_Usuario" >
+          <ConnectorPoint PointX="2.25" PointY="2.87474609375" />
+          <ConnectorPoint PointX="3" PointY="2.87474609375" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
